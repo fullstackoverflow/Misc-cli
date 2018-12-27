@@ -12,7 +12,6 @@ export default class NewProject extends Command {
 
   static flags = {
     help: flags.help({ char: "h" }),
-    // flag with no value (-f, --force)
     force: flags.boolean({ char: "f" })
   };
 
