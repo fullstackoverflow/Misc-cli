@@ -15,11 +15,11 @@ misc
 # Usage
 <!-- usage -->
 ```sh-session
-$ npm install -g misc
+$ npm install -g @tosee/misc-cli
 $ misc COMMAND
 running command...
 $ misc (-v|--version|version)
-misc/1.0.0 win32-x64 node-v8.11.4
+@tosee/misc-cli/1.0.1 win32-x64 node-v8.11.4
 $ misc --help [COMMAND]
 USAGE
   $ misc COMMAND
@@ -29,7 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`misc help [COMMAND]`](#misc-help-command)
-* [`misc new [FILE]`](#misc-new-file)
+* [`misc new [PATH]`](#misc-new-path)
 
 ## `misc help [COMMAND]`
 
@@ -48,22 +48,21 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.4/src\commands\help.ts)_
 
-## `misc new [FILE]`
+## `misc new [PATH]`
 
 create new project with misc
 
 ```
 USAGE
-  $ misc new [FILE]
+  $ misc new [PATH]
 
 OPTIONS
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help   show CLI help
 
 EXAMPLE
   $ misc new ./
 ```
 
-_See code: [src\commands\new.ts](https://github.com/fullstackoverflow/misc-cli/blob/v1.0.0/src\commands\new.ts)_
+_See code: [src\commands\new.ts](https://github.com/fullstackoverflow/misc-cli/blob/v1.0.1/src\commands\new.ts)_
 <!-- commandsstop -->
