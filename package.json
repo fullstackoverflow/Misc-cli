@@ -12,7 +12,9 @@
     "@oclif/plugin-help": "^2.1.4",
     "cli-ux": "^5.0.0",
     "shelljs": "^0.8.3",
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "globby": "^8.0.1",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.19.4",
@@ -22,13 +24,11 @@
     "@types/node": "^10.12.9",
     "@types/rimraf": "^2.0.2",
     "@types/shelljs": "^0.8.0",
-    "chai": "^4.2.0",
-    "globby": "^8.0.1",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
-    "typescript": "^3.1.6"
+    "typescript": "^3.1.6",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0"
   },
   "engines": {
     "node": ">=8.0.0"
