@@ -1,11 +1,8 @@
 language: node_js
 node_js:
   - lts/*
-cache:
-  directories:
-    - node_modules
-    - "$HOME/.npm"
-script: echo "Running tests against $(node -v) ..."
+cache: npm
+script: echo "Running tests against $(node -v) ..."&&npm i
 notifications:
   email:
     on_success: always
