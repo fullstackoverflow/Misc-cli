@@ -13,8 +13,12 @@ jobs:
       node_js: "10"
       before_deploy:
         - ls
+        - npm install
+      after_deploy:
+        - ls
       deploy:
         provider: npm
+        skip_cleanup: true
         email: yx136649111@qq.com
         api_key:
           secure: bPf/wvqyKCPugMoj/JkYXzSpthFkyW7Kuq7tJQBKk3b3bdB/6XV+lKTluOH1SHFSMJ2jfuj4t3heTVJaQJ6P/dWxnysMC67QdEo3ws6/0DmrpaQgPmWi/NV7Nd20XQwoZtxWuufVCJyQN1GxUFBZWH4FoL2H5zhTyOv9eBiT05sZa+uwnvip5zlV9EJqcGfnhN3SqY/1J6S0hNhd2YjKjhLeMwWn25MJ/61e3kt5dMTlIIrqXOwoGLNAgkn2Ur38ocAi3C0VbtTbXo+WIcbQY3mXIIu+KbNsuK0SZxT7f4+kLtIqdbir+xpFVPZzPcnfT8fZwdVv2GI9/PXrWeKPxIbtwe1snEwNQEIcrpzWs/aWDgd/Q5JwvK5BEttt5cCgNS61oxpemg7Hwo8lrQTP6F8RkRCzZG9eYvZRLMLWuO/9oUMgq4hTmA2ln42kTNm9RnzwWelz/nOXxP+AxY/EO3lUMWrg0IO5xipipZlU20nxpgacuZ9gS9nHAyYQH0xyNMR+r3E2g3PbHy1zjkIg3J3AX1HCjyajPvkTa4QzxhwNR2qaCo4Z4ToSvBzcEjTXR0KjqR56w+XRTjktUs7u7Xf69+yM7M4HUxLPUPgiajJ4d3UmyfY4qpiIU7xAWcVHXRYiFE6FwM/uGJRFZyLFI5MNLXyJghoj1VJEqlOxXA8=
