@@ -12,7 +12,7 @@ jobs:
     - stage: npm release
       node_js: "10"
       before_deploy:
-        - npm install
+        - ls
       deploy:
         provider: npm
         email: yx136649111@qq.com
