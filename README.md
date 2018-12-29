@@ -19,7 +19,7 @@ $ npm install -g @tosee/misc-cli
 $ misc COMMAND
 running command...
 $ misc (-v|--version|version)
-@tosee/misc-cli/1.1.1 win32-x64 node-v8.11.4
+@tosee/misc-cli/1.1.2 win32-x64 node-v8.11.4
 $ misc --help [COMMAND]
 USAGE
   $ misc COMMAND
@@ -64,5 +64,5 @@ EXAMPLE
   $ misc new ./
 ```
 
-_See code: [src\commands\new.ts](https://github.com/fullstackoverflow/misc-cli/blob/v1.1.1/src\commands\new.ts)_
+_See code: [src\commands\new.ts](https://github.com/fullstackoverflow/misc-cli/blob/v1.1.2/src\commands\new.ts)_
 <!-- commandsstop -->
