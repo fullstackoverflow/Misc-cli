@@ -1,25 +1,24 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 cache:
   directories:
-  - node_modules
-  - "$HOME/.npm"
+    - node_modules
+    - "$HOME/.npm"
 script: echo "Running tests against $(node -v) ..."
 notifications:
   email:
     on_success: always
     on_failure: always
-
 jobs:
   include:
     - stage: npm release
       node_js: "10"
       deploy:
         provider: npm
-        email: "yx136649111@qq.com"
+        email: yx136649111@qq.com
         api_key:
-          secure: PAQ+WByifIqIaa28YaXSCYDuUbLEXm7DLcyOaWubo9hNwClaMQkz3BQUbvPKoXm1/Uzt78ZiiFjrFx+oJTOCy/4nDwrgPng2CALhQDYAKX7Wd3rTwkfkmPH3HRAa9NCJNvzAOHU5LrOU4IwA+j4mGy/Q7K84xLiSfUw3AMjtwBzjCvUKLBH180D1CxtURap6uwAjqnEtOhPa8pb8aJQYq05dcW/K9HU8AOHhQT5TeBC8IsySjWrhMWSLlkOwKpem4yjHVmM1GFXQBgno2Xkp+k8Lex/Fd4082OAOTKpyyQag2isA5NJqGPf/nwzsZOjyuSrrcPkqNblxHeHM6ACk0PW3q8ztsXXhBCUalrX7xLSMeqMi2SlTrL4Zwj1pG7Bl+XHqV55hOmLqOr0cotz4lXzBbb7JjKVUD9rGVcWBXrrqHTs1DeX2kBJ6P1qEMLDoQc+kO8qY6LPuG1IGzfFtQQg5KUNeOsZEqOgubwTESagtdPMbi/cSxpHZ24/v1AZGNAM62KAerhemMHZz309HKh3KDUaAXKtK8w7rKlmFh9DXwNA5upkX9vrx5nzzKCC+og9JBxWqYpotOwCYBk8Qv023JNcGnK0sbQcHTcMwe4G7CAhS6MlepfgCrH3qstzcducPl9Eaklcj6Wv4WXxo8ZnA1LvbjcJl1lACHd6GuEk=
-      on:
-        branch: master
-        
+          secure: bPf/wvqyKCPugMoj/JkYXzSpthFkyW7Kuq7tJQBKk3b3bdB/6XV+lKTluOH1SHFSMJ2jfuj4t3heTVJaQJ6P/dWxnysMC67QdEo3ws6/0DmrpaQgPmWi/NV7Nd20XQwoZtxWuufVCJyQN1GxUFBZWH4FoL2H5zhTyOv9eBiT05sZa+uwnvip5zlV9EJqcGfnhN3SqY/1J6S0hNhd2YjKjhLeMwWn25MJ/61e3kt5dMTlIIrqXOwoGLNAgkn2Ur38ocAi3C0VbtTbXo+WIcbQY3mXIIu+KbNsuK0SZxT7f4+kLtIqdbir+xpFVPZzPcnfT8fZwdVv2GI9/PXrWeKPxIbtwe1snEwNQEIcrpzWs/aWDgd/Q5JwvK5BEttt5cCgNS61oxpemg7Hwo8lrQTP6F8RkRCzZG9eYvZRLMLWuO/9oUMgq4hTmA2ln42kTNm9RnzwWelz/nOXxP+AxY/EO3lUMWrg0IO5xipipZlU20nxpgacuZ9gS9nHAyYQH0xyNMR+r3E2g3PbHy1zjkIg3J3AX1HCjyajPvkTa4QzxhwNR2qaCo4Z4ToSvBzcEjTXR0KjqR56w+XRTjktUs7u7Xf69+yM7M4HUxLPUPgiajJ4d3UmyfY4qpiIU7xAWcVHXRYiFE6FwM/uGJRFZyLFI5MNLXyJghoj1VJEqlOxXA8=
+        on:
+          branch: master
+          repo: fullstackoverflow/Misc-cli
