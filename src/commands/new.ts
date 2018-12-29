@@ -4,6 +4,30 @@ import { statSync, readdirSync, mkdirSync, writeFileSync, readFileSync, existsSy
 import { sync } from "rimraf";
 import { join } from "path";
 import { execSync } from "child_process";
+import * as Listr from "listr";
+import * as execa from "execa";
+
+function Task(path, projectName) {
+  return new Listr([
+    {
+      title: "Download from git repository",
+      task: () =>
+        execa.stdout("git", ["clone", "https://github.com/fullstackoverflow/Misc-exmaple.git", path]).then(result => {
+          if (result !== "") {
+            throw new Error("Download error");
+          }
+          sync(join(path, ".git"));
+          const pkg = JSON.parse(readFileSync(join(path, "package.json")).toString());
+          pkg.name = projectName;
+          writeFileSync(join(path, "package.json"), JSON.stringify(pkg, null, 4));
+        })
+    },
+    {
+      title: "Install package dependencies with npm",
+      task: () => execa("npm", ["install"], { cwd: path })
+    }
+  ]);
+}
 
 export default class NewProject extends Command {
   static description = "create new project with misc";
@@ -40,12 +64,7 @@ export default class NewProject extends Command {
         mkdirSync(path);
       }
       const projectName = await cli.prompt("What is the project name?");
-      execSync("git clone https://github.com/fullstackoverflow/Misc-exmaple.git .", { cwd: path, stdio: "inherit" });
-      sync(join(path, ".git"));
-      const pkg = JSON.parse(readFileSync(join(path, "package.json")).toString());
-      pkg.name = projectName;
-      writeFileSync(join(path, "package.json"), JSON.stringify(pkg, null, 4));
-      execSync("npm i", { cwd: path, stdio: "inherit" });
+      await Task(path, projectName).run();
       this.log(`project ${projectName} create success`);
     }
   }
