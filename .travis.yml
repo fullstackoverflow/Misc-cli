@@ -11,11 +11,6 @@ jobs:
   include:
     - stage: npm release
       node_js: "10"
-      before_deploy:
-        - ls
-        - npm install
-      after_deploy:
-        - ls
       deploy:
         provider: npm
         skip_cleanup: true

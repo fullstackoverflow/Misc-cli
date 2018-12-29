@@ -58,8 +58,8 @@
   },
   "repository": "fullstackoverflow/misc-cli",
   "scripts": {
-    "postpack": "rm oclif.manifest.json",
-    "prepack": "tsc -b && oclif-dev manifest && oclif-dev readme",
+    "postpack": "rimraf oclif.manifest.json",
+    "prepack": "rimraf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "echo test",
     "test-bak": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
