@@ -2,7 +2,7 @@ import { Command, flags } from "@oclif/command";
 import cli from "cli-ux";
 import { statSync, readdirSync, mkdirSync, writeFileSync, readFileSync, existsSync } from "fs";
 import { sync } from "rimraf";
-import { join } from "path";
+import { join, resolve } from "path";
 import { execSync } from "child_process";
 import * as Listr from "listr";
 import * as execa from "execa";
@@ -43,7 +43,7 @@ export default class NewProject extends Command {
 
   async run() {
     const { args, flags } = this.parse(NewProject);
-    const { path } = args;
+    let { path } = args;
     if (path) {
       if (!flags.force) {
         if (existsSync(path) && statSync(path).isDirectory()) {
@@ -52,16 +52,20 @@ export default class NewProject extends Command {
             if (cover === "N") {
               return;
             } else if (cover === "Y") {
-              sync(path);
-              mkdirSync(path);
+              sync("{*,.*}", {
+                glob: {
+                  cwd: path
+                }
+              });
             }
           }
-        } else {
-          mkdirSync(path);
         }
       } else {
-        sync(path);
-        mkdirSync(path);
+        sync("{*,.*}", {
+          glob: {
+            cwd: path
+          }
+        });
       }
       const projectName = await cli.prompt("What is the project name?");
       await Task(path, projectName).run();
